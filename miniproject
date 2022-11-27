@@ -1,0 +1,33 @@
+print("1. Sign Up")
+print("2. Log In")
+
+ans = "y"
+db = {}
+def sign_up():
+  usr = input("Enter the username->")
+  if usr not in db.keys():
+      psw = input("Enter the password->")
+      db[usr] = psw
+      print("you are now registered")
+  else:
+    print("username exists")
+ 
+  return
+
+def login():
+  u = input("Enter the username->")
+  if u in db.keys():
+    p = input("Enter the password->")
+    if db[u]==p:
+      print("you are logged in!!Welcome")
+    else:
+      print("wrong password!!")
+  else:
+    print("username does not exist")
+while ans == "y":
+  choice = int(input("Enter your choice->"))
+  if choice == 1:
+    sign_up()
+  elif choice == 2:
+    login()
+  ans = input("Would you like to continue, Enter y for yes,n for no")
